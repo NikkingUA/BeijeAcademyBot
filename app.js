@@ -3,9 +3,6 @@ import { Configuration, OpenAIApi } from 'openai';
 import * as dotenv from 'dotenv';
 
 dotenv.config()
-const TOKEN_TELEGRAF = "5935151353:AAHBsEmjfmrmPaGv1CUB9_VOojFPL6_9yv4";
-const OPEN_AI = "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";
-
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
