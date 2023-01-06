@@ -251,7 +251,7 @@ bot.on('text', async ctx => {
         if (onOffOpenAi) {
             await ctx.reply('La tua richiesta in elaborazione.....')
             const completion = await openai.createCompletion({
-                model: "text-davinci-003",
+                model: "text-ada-003",
                 prompt: ctx.message.text,
                 max_tokens: 3000,
                 temperature: 0.9
