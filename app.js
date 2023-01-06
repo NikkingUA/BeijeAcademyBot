@@ -26,7 +26,7 @@ bot.command('start', async context => {
 });
 
 bot.command('help', ctx => {
-    ctx.reply('I tryyyyy!')
+    ctx.reply('I tryyyyy, wait please!')
 });
 
 //FRONT END BOT
@@ -254,7 +254,7 @@ bot.on('text', async ctx => {
         if (onOffOpenAi) {
             await ctx.reply('La tua richiesta in elaborazione.....')
             const completion = await openai.createCompletion({
-                model: "text-embedding-ada-002",
+                model: "text-ada-001",
                 prompt: ctx.message.text,
                 max_tokens: 3000,
                 temperature: 0.9
