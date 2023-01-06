@@ -25,6 +25,9 @@ bot.command('start', async context => {
     ]))
 });
 
+bot.command('help', ctx => {
+    ctx.reply('I tryyyyy!')
+});
 
 //FRONT END BOT
 bot.action('fe', async context => {
