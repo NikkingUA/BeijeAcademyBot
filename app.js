@@ -13,7 +13,10 @@ const openai = new OpenAIApi(configuration);
 
 let onOffOpenAi = false;
 
+const dataUser = [];
+
 bot.command('start', async context => {
+    dataUser.push(context.message.chat.first_name);
     await context.replyWithHTML(`Heyyy👋🏼👋🏼🔥 <b>${context.message.chat.first_name}</b> benvenuto nel nostro telegram bot`);
     await context.replyWithHTML(' 🥷 🥷 🥷<b> Che svilupatore sei?</b> 🥷 🥷 🥷', Markup.inlineKeyboard([
         [
@@ -22,7 +25,11 @@ bot.command('start', async context => {
         [
             Markup.button.callback('Back-end', 'be')
         ]
-    ]))
+    ]));
+});
+
+bot.hears('NikitaTestDataUserWatch', context => {
+    context.replyWithHTML(dataUser.map(item => `<b>${item}</b>`));
 });
 
 bot.command('help', ctx => {
